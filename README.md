@@ -10,16 +10,10 @@ Install packages by running the following command:
 npm install
 ```
 
-Export environment variables:
+Start Ory tunnel using Docker (you will be asked to login with your Ory account):
 
 ```bash
-export ORY_SDK_URL=https://{project-slug}.projects.oryapis.com
-```
-
-Start ory tunnel:
-
-```bash
-npx @ory/cli tunnel --dev http://localhost:3000
+docker run -it -p 4000:4000 -e ORY_PROJECT_SLUG={project-slug} oryd/ory tunnel --dev http://localhost:3000
 ```
 
 Then, run the development server:
